@@ -5,12 +5,12 @@ namespace EmployeeAPI.Models
     public class Employee
     {
         [Key]
-        private Guid Id;
-        private string Name {  get; set; }
-        private string Email { get; set; }
-        private long Phone { get; set; }
-        private long salary { get; set; }
-        private string Department { get; set; }
+        public Guid Id { get; set; }
+        public string Name {  get; set; }
+        public string Email { get; set; }
+        public long Phone { get; set; }
+        public long Salary { get; set; }
+        public string Department { get; set; }
 
     }
 }
