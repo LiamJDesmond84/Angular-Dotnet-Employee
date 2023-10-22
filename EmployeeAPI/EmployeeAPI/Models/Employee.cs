@@ -1,10 +1,11 @@
-﻿namespace EmployeeAPI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EmployeeAPI.Models
 {
     public class Employee
     {
-
-        private string Id;
-
+        [Key]
+        private Guid Id;
         private string Name {  get; set; }
         private string Email { get; set; }
         private int Phone { get; set; }
