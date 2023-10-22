@@ -1,7 +1,7 @@
 <div class="container my-5">
 <h1 class="mb-3">Employees</h1>
 
-<table class="table">
+<table class="table" *ngIf="employees != null">
     <thead>
         <tr>
           <th>ID</th>
@@ -22,4 +22,5 @@
         <td>{{x.department}}</td>
     </tbody>
 </table>
+<p *ngIf="employees == null">No employees found</p>
 </div>
