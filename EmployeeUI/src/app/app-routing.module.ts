@@ -8,7 +8,7 @@ const routes: Routes = [
     component: EmployeeListComponent
   },
   {
-    path: "/employees",
+    path: "employees",
     component: EmployeeListComponent
   }
 ];
