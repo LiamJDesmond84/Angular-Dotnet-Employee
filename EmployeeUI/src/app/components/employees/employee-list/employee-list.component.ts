@@ -9,7 +9,16 @@ import { Employee } from 'src/app/models/employee.model';
 export class EmployeeListComponent implements OnInit {
 
   employees: Employee[] = [
-    {
+
+  ];
+
+  constructor() {}
+
+  ngOnInit(): void {
+
+
+
+    this.employees.push(    {
       "id": "1",
       "name": "Bob",
       "email":"bob@test.com",
@@ -40,16 +49,7 @@ export class EmployeeListComponent implements OnInit {
       "phone": 6195551134,
       "salary": 80000,
       "department": "engineering"
-    }
-  ];
-
-  constructor() {}
-
-  ngOnInit(): void {
-
-
-
-    this.employees.push()
+    })
 
   }
 
