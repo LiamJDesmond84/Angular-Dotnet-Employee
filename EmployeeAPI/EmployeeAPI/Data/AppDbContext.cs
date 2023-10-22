@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeAPI.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext: DbContext
     {
 
         public AppDbContext(DbContextOptions options) : base(options) { }
 
-        DbSet<Employee> Employees { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
     }
 }
