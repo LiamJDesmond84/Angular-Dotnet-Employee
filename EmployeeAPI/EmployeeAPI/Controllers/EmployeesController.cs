@@ -19,7 +19,9 @@ namespace EmployeeAPI.Controllers
 
         public async Task<IActionResult> getAllEmployees()
         {
-            await context.Employees.ToListAsync();
+            var employees = await context.Employees.ToListAsync();
+
+            return Ok(employees);
         }
     }
 }
