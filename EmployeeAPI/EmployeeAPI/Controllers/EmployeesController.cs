@@ -1,5 +1,6 @@
 ﻿using EmployeeAPI.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeAPI.Controllers
 {
@@ -16,9 +17,9 @@ namespace EmployeeAPI.Controllers
 
         [HttpGet]
 
-        public IActionResult getAllEmployees()
+        public async Task<IActionResult> getAllEmployees()
         {
-            
+            context.Employees.ToListAsync().Wait();
         }
     }
 }
