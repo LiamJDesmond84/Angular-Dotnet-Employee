@@ -19,7 +19,7 @@ namespace EmployeeAPI.Controllers
 
         public async Task<IActionResult> getAllEmployees()
         {
-            context.Employees.ToListAsync().Wait();
+            await context.Employees.ToListAsync();
         }
     }
 }
