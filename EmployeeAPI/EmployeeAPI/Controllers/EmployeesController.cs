@@ -1,4 +1,5 @@
 ﻿using EmployeeAPI.Data;
+using EmployeeAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,5 +24,13 @@ namespace EmployeeAPI.Controllers
 
             return Ok(employees);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> AddEmployee(Employee employee)
+        {
+
+        }
+
     }
 }
