@@ -27,15 +27,20 @@ namespace EmployeeAPI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddEmployee([FromBody] Employee employee)
+        public async Task<IActionResult> AddEmployee([FromBody] Employee employeeRequest)
         {
+            employeeRequest.Id = Guid.NewGuid();
+
             var result = await context.SaveChangesAsync();
 
-            if(result == 200)
+            if(result == 201)
             {
                 return Created(result);
             }
             else
+            {
+                return BadRequest(result);
+            }
         }
 
     }
