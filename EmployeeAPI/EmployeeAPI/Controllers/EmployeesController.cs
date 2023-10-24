@@ -2,6 +2,7 @@
 
 namespace EmployeeAPI.Controllers
 {
+    [ApiController]
     public class EmployeesController : Controller
     {
         public IActionResult Index()
