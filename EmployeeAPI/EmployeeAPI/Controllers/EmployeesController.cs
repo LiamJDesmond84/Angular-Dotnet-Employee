@@ -33,15 +33,17 @@ namespace EmployeeAPI.Controllers
 
             await context.Employees.AddAsync(employeeRequest);
             await context.SaveChangesAsync();
+            
+            return Ok(employeeRequest);
 
-            if(result == 201)
-            {
-                return Created(result);
-            }
-            else
-            {
-                return BadRequest(result);
-            }
+            //if(result == 201)
+            //{
+            //    return Created(result);
+            //}
+            //else
+            //{
+            //    return BadRequest(result);
+            //}
         }
 
     }
