@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EmployeeAPI.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeAPI.Controllers
 {
@@ -6,9 +7,16 @@ namespace EmployeeAPI.Controllers
     [Route("api/[controller]")]
     public class EmployeesController : Controller
     {
+        private readonly AppDbContext context;
+
+        public EmployeesController(AppDbContext context)
+        {
+            this.context = context;
+        }
+
         [HttpGet]
 
-        public IActionResult Index()
+        public IActionResult getAllEmployees()
         {
             
         }
