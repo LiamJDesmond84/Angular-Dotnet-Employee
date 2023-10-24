@@ -31,7 +31,8 @@ namespace EmployeeAPI.Controllers
         {
             employeeRequest.Id = Guid.NewGuid();
 
-            var result = await context.SaveChangesAsync();
+            await context.Employees.AddAsync(employeeRequest);
+            await context.SaveChangesAsync();
 
             if(result == 201)
             {
