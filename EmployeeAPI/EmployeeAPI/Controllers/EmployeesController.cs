@@ -27,9 +27,15 @@ namespace EmployeeAPI.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddEmployee(Employee employee)
+        public async Task<IActionResult> AddEmployee([FromBody] Employee employee)
         {
+            var result = await context.SaveChangesAsync();
 
+            if(result == 200)
+            {
+                return Created(result);
+            }
+            else
         }
 
     }
