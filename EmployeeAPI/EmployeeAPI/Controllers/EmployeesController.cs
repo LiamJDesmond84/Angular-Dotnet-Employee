@@ -2,6 +2,7 @@
 using EmployeeAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace EmployeeAPI.Controllers
 {
@@ -33,6 +34,8 @@ namespace EmployeeAPI.Controllers
 
             await context.Employees.AddAsync(employeeRequest);
             await context.SaveChangesAsync();
+
+            Debug.WriteLine(employeeRequest);
             
             return Ok(employeeRequest);
 
