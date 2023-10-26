@@ -15,9 +15,14 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.employeesService.getAllEmployees().subscribe({
+    this.employeesService.getAllEmployees()
+    // Subscribing because the service method is an Observable
+    .subscribe({
       next: (employees) => {
-        console.log(employees)
+        console.log(employees);
+      },
+      error: (response) => {
+        console.log(response);
       }
     })
 
