@@ -13,6 +13,7 @@ export class EmployeesService {
 
   getAllEmployees() {
 
-    this.http.get()
+    // Full path to getAllEmployees from backend
+    this.http.get(this.baseApiUrl + "/api/employees")
   }
 }
