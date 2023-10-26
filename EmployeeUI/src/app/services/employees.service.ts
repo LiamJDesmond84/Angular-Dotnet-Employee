@@ -10,5 +10,6 @@ export class EmployeesService {
 
   getAllEmployees() {
 
+    this.http.get()
   }
 }
