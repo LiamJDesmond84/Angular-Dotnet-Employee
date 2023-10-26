@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Employee } from '../models/employee.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllEmployees() {
+  getAllEmployees(): Observable<Employee[]> {
 
     // Full path to getAllEmployees from backend(according to Swagger?)
     return this.http.get<Employee[]>(this.baseApiUrl + "/api/employees");
