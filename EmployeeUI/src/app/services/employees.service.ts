@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
+import { Employee } from '../models/employee.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class EmployeesService {
 
   getAllEmployees() {
 
-    // Full path to getAllEmployees from backend
-    this.http.get(this.baseApiUrl + "/api/employees")
+    // Full path to getAllEmployees from backend(according to Swagger?)
+    return this.http.get<Employee[]>(this.baseApiUrl + "/api/employees");
   }
 }
