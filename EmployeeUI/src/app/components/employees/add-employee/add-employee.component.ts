@@ -8,6 +8,15 @@ import { EmployeesService } from 'src/app/services/employees.service';
   styleUrls: ['./add-employee.component.css']
 })
 export class AddEmployeeComponent {
+  
+  addEmployeeRequest: Employee = {
+    id: "",
+    name: "",
+    email: "",
+    phone: 0,
+    salary: 0,
+    department: ""
+  }
 
   constructor(private employeeService: EmployeesService){}
 
