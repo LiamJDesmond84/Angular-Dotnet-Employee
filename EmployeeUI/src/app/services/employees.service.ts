@@ -18,4 +18,9 @@ export class EmployeesService {
     // Full path to getAllEmployees from backend(according to Swagger?)
     return this.http.get<Employee[]>(this.baseApiUrl + "/api/employees");
   }
+
+  createEmployee(employee: Employee): Employee {
+
+    return this.http.post<Employee>(this.baseApiUrl + "/api/new-employee", employee);
+  }
 }
