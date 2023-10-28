@@ -19,7 +19,7 @@ export class EmployeeListComponent implements OnInit {
     // Subscribing because the service method is an Observable
     .subscribe({
       next: (employees) => {
-        console.log(employees);
+        this.employees = employees;
       },
       error: (response) => {
         console.log(response);
