@@ -20,9 +20,9 @@ export class AddEmployeeComponent {
 
   constructor(private employeeService: EmployeesService){}
 
-  public createEmployee(employee: Employee) {
+  public addEmployee(employee: Employee) {
 
-    this.employeeService.createEmployee(employee);
+    this.employeeService.addEmployee(employee);
   }
 
 }
