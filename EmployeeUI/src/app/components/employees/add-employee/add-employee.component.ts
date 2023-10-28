@@ -12,7 +12,8 @@ export class AddEmployeeComponent {
   constructor(private employeeService: EmployeesService){}
 
   public createEmployee(employee: Employee) {
-    
+
+    this.employeeService.createEmployee(employee);
   }
 
 }
