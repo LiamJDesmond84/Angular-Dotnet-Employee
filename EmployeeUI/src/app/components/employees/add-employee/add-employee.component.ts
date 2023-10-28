@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AddEmployeeComponent {
 
-  constructor(http: HttpClient){}
+  constructor(private employeeService: EmployeesService){}
 
 
 
