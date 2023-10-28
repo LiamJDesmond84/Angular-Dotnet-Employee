@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from 'src/app/models/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
@@ -10,6 +11,8 @@ export class AddEmployeeComponent {
 
   constructor(private employeeService: EmployeesService){}
 
-
+  public createEmployee(employee: Employee) {
+    
+  }
 
 }
