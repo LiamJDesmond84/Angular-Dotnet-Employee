@@ -22,7 +22,9 @@ export class AddEmployeeComponent {
 
   public addEmployee(employee: Employee) {
 
-    this.employeeService.addEmployee(employee);
+    console.log(this.addEmployee);
+    
+    // this.employeeService.addEmployee(employee);
   }
 
 }
