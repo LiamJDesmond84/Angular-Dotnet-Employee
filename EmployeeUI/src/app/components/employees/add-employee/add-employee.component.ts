@@ -24,7 +24,10 @@ export class AddEmployeeComponent {
 
     // console.log(this.addEmployeeRequest);
     
-    this.employeeService.addEmployee(this.addEmployeeRequest);
+    this.employeeService.addEmployee(this.addEmployeeRequest)
+    .subscribe({
+      next: (newEmployee) = this.addEmployeeRequest;
+    });
   }
 
 }
