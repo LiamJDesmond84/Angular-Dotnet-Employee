@@ -20,11 +20,11 @@ export class AddEmployeeComponent {
 
   constructor(private employeeService: EmployeesService){}
 
-  public addEmployee(employee: Employee) {
+  public addEmployee() {
 
-    console.log(this.addEmployeeRequest);
+    // console.log(this.addEmployeeRequest);
     
-    // this.employeeService.addEmployee(employee);
+    this.employeeService.addEmployee(this.addEmployeeRequest);
   }
 
 }
