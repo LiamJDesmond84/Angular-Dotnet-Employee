@@ -19,8 +19,8 @@ export class EmployeesService {
     return this.http.get<Employee[]>(this.baseApiUrl + "/api/employees");
   }
 
-  addEmployee(employee: Employee): Observable<Employee> {
+  addEmployee(addEmployeeRequest: Employee): Observable<Employee> {
 
-    return this.http.post<Employee>(this.baseApiUrl + "/api/new-employee", employee);
+    return this.http.post<Employee>(this.baseApiUrl + "/api/new-employee", addEmployeeRequest);
   }
 }
