@@ -23,6 +23,15 @@ export class EditEmployeeComponent {
   public editEmployee() {
 
     this.employeeService.editEmployee(this.editEmployeeRequest)
-    .subscribe().
+    .subscribe({
+      next: (employee) => {
+        console.log(employee);
+        
+      },
+      error: (response) => {
+        console.log(response.error);
+        
+      }
+    })
   }
 }
