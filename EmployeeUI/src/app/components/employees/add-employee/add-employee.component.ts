@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 
@@ -18,7 +19,7 @@ export class AddEmployeeComponent {
     department: ""
   }
 
-  constructor(private employeeService: EmployeesService){}
+  constructor(private employeeService: EmployeesService, private router: Router){}
 
   public addEmployee() {
 
@@ -28,7 +29,7 @@ export class AddEmployeeComponent {
     .subscribe({
       next: (newEmployee) => {
         console.log(newEmployee);
-        
+        this.router.navigate(["/employees"]);
       },
       error: (response) => {
         console.log(response.error);
