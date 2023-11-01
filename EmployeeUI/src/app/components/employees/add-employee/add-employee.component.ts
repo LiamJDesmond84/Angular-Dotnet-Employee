@@ -27,8 +27,8 @@ export class AddEmployeeComponent {
     
     this.employeeService.addEmployee(this.addEmployeeRequest)
     .subscribe({
-      next: (newEmployee) => {
-        console.log(newEmployee);
+      next: (response) => {
+        console.log(response);
         this.router.navigate(["/employees"]);
       },
       error: (response) => {
