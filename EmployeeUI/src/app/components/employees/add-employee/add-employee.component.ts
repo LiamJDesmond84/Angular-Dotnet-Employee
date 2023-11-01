@@ -25,6 +25,8 @@ export class AddEmployeeComponent {
 
     // console.log(this.addEmployeeRequest);
     
+
+    // Like an Axios call after calling the service method(i.e., .then, .catch)
     this.employeeService.addEmployee(this.addEmployeeRequest)
     .subscribe({
       next: (response) => {
