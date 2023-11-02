@@ -10,6 +10,7 @@
           <th>Phone</th>
           <th>Salary</th>
           <th>Department</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +21,7 @@
         <td>{{x.phone}}</td>
         <td>{{x.salary}}</td>
         <td>{{x.department}}</td>
+        <td><a routerLink="edit:{{x.id}}"></a></td>
     </tbody>
 </table>
 <p *ngIf="employees.length <= 0">No employees found</p>
