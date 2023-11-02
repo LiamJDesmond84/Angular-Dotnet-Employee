@@ -21,7 +21,7 @@
         <td>{{x.phone}}</td>
         <td>{{x.salary}}</td>
         <td>{{x.department}}</td>
-        <td><a [routerLink]="['edit:{{x.id}}']">View</a></td>
+        <td><a [routerLink]="['employees','edit', x.id]">View</a></td>
     </tbody>
 </table>
 <p *ngIf="employees.length <= 0">No employees found</p>
