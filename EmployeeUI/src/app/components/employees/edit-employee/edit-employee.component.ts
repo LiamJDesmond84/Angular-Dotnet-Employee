@@ -29,6 +29,7 @@ export class EditEmployeeComponent implements OnInit {
 
           if(id) {
             // call API
+            this.employeeService.getEmployee(id);
           }
         }
       }
