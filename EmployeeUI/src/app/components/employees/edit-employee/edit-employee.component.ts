@@ -22,7 +22,7 @@ export class EditEmployeeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private employeeService: EmployeesService, private router: Router) {}
 
 
-  
+
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       {
@@ -51,7 +51,7 @@ export class EditEmployeeComponent implements OnInit {
 
   
 
-  public updateEmployee() {
+  updateEmployee() {
     
     this.employeeService.updateEmployee(this.employeeDetails.id, this.employeeDetails)
     .subscribe({
@@ -63,6 +63,20 @@ export class EditEmployeeComponent implements OnInit {
       },
       error: (response) => {
         console.log(response.error);
+        
+      }
+    })
+  }
+
+  deleteEmplyee(id: string){
+    this.employeeService.deleteEmployee(id)
+    .subscribe( {
+      next: (response) {
+        console.log(response);
+        
+      },
+      error: (response) {
+        console.log(response);
         
       }
     })
