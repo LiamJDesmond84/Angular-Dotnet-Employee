@@ -49,7 +49,7 @@ namespace EmployeeAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> EditEmployee([FromBody] int employeeId)
         {
-
+            var employee = context.Employees.FirstOrDefaultAsync(employeeId);
 
         }
 
