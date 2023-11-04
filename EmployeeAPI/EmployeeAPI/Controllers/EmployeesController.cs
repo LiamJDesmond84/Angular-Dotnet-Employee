@@ -63,9 +63,11 @@ namespace EmployeeAPI.Controllers
         }
 
         [HttpPut("{id:Guid}")]
-        public async Task<IActionResult> UpdateEmployee([FromBody] Employee employee)
+        public async Task<IActionResult> UpdateEmployee([FromRoute] Guid id, [FromBody] Employee employeeUpdateRequest)
         {
-            var employee = await context.Employees.Update(employee);
+            // FindAsync can be used instead of FirstOrDefaultAsync
+            var employee = await context.Employees.FindAsync(id);
+            //var employee = await context.Employees.Update(employee);
             await context.SaveChangesAsync();
 
             return Ok(employee);
