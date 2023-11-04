@@ -47,9 +47,10 @@ namespace EmployeeAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> getEmployee([FromRoute] int id)
+        public async Task<IActionResult> getEmployee([FromRoute] Guid id)
         {
             var employee = context.Employees.FirstOrDefaultAsync(x => x.Id == id);
+            return Ok(employee);
         }
 
         [HttpPut]
