@@ -46,12 +46,12 @@ namespace EmployeeAPI.Controllers
             //}
         }
 
-        //[HttpPut]
-        //public async Task<IActionResult> EditEmployee([FromBody] Employee employeeRequesst)
-        //{
+        [HttpPut]
+        public async Task<IActionResult> EditEmployee([FromBody] int employeeId)
+        {
 
 
-        //}
+        }
 
     }
 }
