@@ -49,15 +49,26 @@ namespace EmployeeAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> getEmployee([FromRoute] Guid id)
         {
-            var employee = context.Employees.FirstOrDefaultAsync(x => x.Id == id);
-            return Ok(employee);
+            var employee = await context.Employees.FirstOrDefaultAsync(x => x.Id == id);
+
+            if(employee == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(employee);
+            }
+            
         }
 
         [HttpPut]
         public async Task<IActionResult> EditEmployee([FromBody] Employee employee)
         {
-            
+            var employee = await context.Employees.Add(employee);
+            await context.SaveChangesAsync();
 
+            return Ok(employee);
         }
 
     }
