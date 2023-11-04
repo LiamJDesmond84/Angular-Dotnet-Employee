@@ -50,7 +50,7 @@ export class EditEmployeeComponent implements OnInit {
 
   public editEmployee() {
 
-    this.employeeService.editEmployee(this.editEmployeeRequest)
+    this.employeeService.editEmployee(this.employeeDetails)
     .subscribe({
       next: (employee) => {
         console.log(employee);
