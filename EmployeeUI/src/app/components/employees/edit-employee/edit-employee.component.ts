@@ -68,7 +68,7 @@ export class EditEmployeeComponent implements OnInit {
     })
   }
 
-  // Calling from HTML button
+  // Calling and sending employeeDetails.id from HTML button
   deleteEmployee(id: string){
     this.employeeService.deleteEmployee(id)
     .subscribe( {
