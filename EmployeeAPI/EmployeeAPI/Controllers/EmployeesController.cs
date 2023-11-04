@@ -66,7 +66,6 @@ namespace EmployeeAPI.Controllers
         [HttpPut("{id:Guid}")]
         public async Task<IActionResult> UpdateEmployee([FromRoute] Guid id, [FromBody] Employee employeeUpdateRequest)
         {
-            Debug.WriteLine("BACKEND 1");
             // FindAsync can be used instead of FirstOrDefaultAsync
             var employee = await context.Employees.FindAsync(id);
 
@@ -76,7 +75,6 @@ namespace EmployeeAPI.Controllers
             }
             else
             {
-                Debug.WriteLine("BACKEND 2");
                 context.Entry(employee).CurrentValues.SetValues(employeeUpdateRequest);
                 //employee.Name = employeeUpdateRequest.Name;
                 //employee.Email = employeeUpdateRequest.Email;
