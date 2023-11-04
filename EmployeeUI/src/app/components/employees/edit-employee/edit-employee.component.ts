@@ -10,7 +10,7 @@ import { EmployeesService } from 'src/app/services/employees.service';
 })
 export class EditEmployeeComponent implements OnInit {
 
-  editEmployeeRequest: Employee = {
+  employeeDetails: Employee = {
     id: "",
     name: "",
     email: "",
@@ -29,7 +29,12 @@ export class EditEmployeeComponent implements OnInit {
 
           if(id) {
             // call API
-            this.employeeService.getEmployee(id);
+            this.employeeService.getEmployee(id)
+            .subscribe({
+              next: (response) => {
+                retur
+              }
+            });
           }
         }
       }
