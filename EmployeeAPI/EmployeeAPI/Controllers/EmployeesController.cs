@@ -46,7 +46,7 @@ namespace EmployeeAPI.Controllers
             //}
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:Guid}")]
         public async Task<IActionResult> getEmployee([FromRoute] Guid id)
         {
             var employee = await context.Employees.FirstOrDefaultAsync(x => x.Id == id);
@@ -62,14 +62,14 @@ namespace EmployeeAPI.Controllers
             
         }
 
-        [HttpPut]
-        public async Task<IActionResult> EditEmployee([FromBody] Employee employee)
-        {
-            var employee = await context.Employees.Add(employee);
-            await context.SaveChangesAsync();
+        //[HttpPut]
+        //public async Task<IActionResult> EditEmployee([FromBody] Employee employee)
+        //{
+        //    var employee = await context.Employees.Update(employee);
+        //    await context.SaveChangesAsync();
 
-            return Ok(employee);
-        }
+        //    return Ok(employee);
+        //}
 
     }
 }
