@@ -62,14 +62,14 @@ namespace EmployeeAPI.Controllers
             
         }
 
-        //[HttpPut]
-        //public async Task<IActionResult> EditEmployee([FromBody] Employee employee)
-        //{
-        //    var employee = await context.Employees.Update(employee);
-        //    await context.SaveChangesAsync();
+        [HttpPut("{id:Guid}")]
+        public async Task<IActionResult> UpdateEmployee([FromBody] Employee employee)
+        {
+            var employee = await context.Employees.Update(employee);
+            await context.SaveChangesAsync();
 
-        //    return Ok(employee);
-        //}
+            return Ok(employee);
+        }
 
     }
 }

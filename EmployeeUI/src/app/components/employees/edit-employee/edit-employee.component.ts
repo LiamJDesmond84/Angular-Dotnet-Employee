@@ -28,7 +28,7 @@ export class EditEmployeeComponent implements OnInit {
           const id = params.get("id");
 
           if(id) {
-            // call API
+            // If ID exists - call API to GET employee
             this.employeeService.getEmployee(id)
             .subscribe({
               next: (response) => {
@@ -48,9 +48,9 @@ export class EditEmployeeComponent implements OnInit {
 
   
 
-  public editEmployee() {
+  public updateEmployee() {
 
-    this.employeeService.editEmployee(this.employeeDetails)
+    this.employeeService.updateEmployee(this.employeeDetails)
     .subscribe({
       next: (employee) => {
         console.log(employee);
