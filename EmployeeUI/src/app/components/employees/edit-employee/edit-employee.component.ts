@@ -32,7 +32,7 @@ export class EditEmployeeComponent implements OnInit {
             this.employeeService.getEmployee(id)
             .subscribe({
               next: (response) => {
-                retur
+                this.employeeDetails = response;
               }
             });
           }
