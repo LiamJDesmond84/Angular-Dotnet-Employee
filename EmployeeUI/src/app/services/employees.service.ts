@@ -33,6 +33,6 @@ export class EmployeesService {
   }
 
   deleteEmployee(id: string): Observable<Employee> {
-    return this.http.get<Employee>(this.baseApiUrl + "/api/employees/" + id);
+    return this.http.delete<Employee>(this.baseApiUrl + "/api/employees/" + id);
   }
 }
