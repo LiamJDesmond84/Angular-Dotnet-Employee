@@ -26,6 +26,10 @@ export class EditEmployeeComponent implements OnInit {
         next: (params) => {
           // "id" from app-routing route
           const id = params.get("id");
+
+          if(id) {
+            // call API
+          }
         }
       }
     )

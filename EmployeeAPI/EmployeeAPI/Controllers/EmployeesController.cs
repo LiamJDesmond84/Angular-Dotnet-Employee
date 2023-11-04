@@ -46,10 +46,16 @@ namespace EmployeeAPI.Controllers
             //}
         }
 
-        [HttpPut]
-        public async Task<IActionResult> EditEmployee([FromBody] int employeeId)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> getEmployee([FromBody] int id)
         {
             var employee = context.Employees.FirstOrDefaultAsync(employeeId);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> EditEmployee([FromBody] Employee employee)
+        {
+            
 
         }
 
