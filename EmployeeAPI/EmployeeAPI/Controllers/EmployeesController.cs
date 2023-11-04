@@ -67,8 +67,20 @@ namespace EmployeeAPI.Controllers
         {
             // FindAsync can be used instead of FirstOrDefaultAsync
             var employee = await context.Employees.FindAsync(id);
-            //var employee = await context.Employees.Update(employee);
-            await context.SaveChangesAsync();
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                employee.Name = employeeUpdateRequest.Name;
+                employee.Email = employeeUpdateRequest.Email;
+                employee.Salary = employeeUpdateRequest.Salary;
+                employee.Phone = employeeUpdateRequest.Phone;
+                employee.Department = employeeUpdateRequest.Department;
+
+            }
 
             return Ok(employee);
         }
