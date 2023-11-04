@@ -21,7 +21,14 @@ export class EditEmployeeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private employeeService: EmployeesService) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.route.paramMap.subscribe(
+      {
+        next: (params) => {
+          // "id" from app-routing route
+          const id = params.get("id");
+        }
+      }
+    )
   }
 
   
