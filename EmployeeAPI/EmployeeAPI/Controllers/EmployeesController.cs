@@ -74,11 +74,13 @@ namespace EmployeeAPI.Controllers
             }
             else
             {
-                employee.Name = employeeUpdateRequest.Name;
-                employee.Email = employeeUpdateRequest.Email;
-                employee.Salary = employeeUpdateRequest.Salary;
-                employee.Phone = employeeUpdateRequest.Phone;
-                employee.Department = employeeUpdateRequest.Department;
+
+                context.Entry(employee).CurrentValues.SetValues(employeeUpdateRequest);
+                //employee.Name = employeeUpdateRequest.Name;
+                //employee.Email = employeeUpdateRequest.Email;
+                //employee.Salary = employeeUpdateRequest.Salary;
+                //employee.Phone = employeeUpdateRequest.Phone;
+                //employee.Department = employeeUpdateRequest.Department;
 
                 //employee = employeeUpdateRequest;
 
