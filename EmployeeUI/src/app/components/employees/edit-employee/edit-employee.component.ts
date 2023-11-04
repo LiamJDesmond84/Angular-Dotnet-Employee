@@ -71,11 +71,12 @@ export class EditEmployeeComponent implements OnInit {
   deleteEmplyee(id: string){
     this.employeeService.deleteEmployee(id)
     .subscribe( {
-      next: (response) {
+      next: (response) => {
         console.log(response);
+        this.router.navigate(["/employees"]);
         
       },
-      error: (response) {
+      error: (response) => {
         console.log(response);
         
       }
