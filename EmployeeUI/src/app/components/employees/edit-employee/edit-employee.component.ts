@@ -20,6 +20,9 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   constructor(private route: ActivatedRoute, private employeeService: EmployeesService, private router: Router) {}
+
+
+  
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       {

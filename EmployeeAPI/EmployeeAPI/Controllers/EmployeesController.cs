@@ -90,5 +90,11 @@ namespace EmployeeAPI.Controllers
 
         }
 
+        [HttpDelete("{id:Guid}")]
+        public async Task<IActionResult> deleteEmployee([FromRoute] Guid id)
+        {
+
+        }
+
     }
 }
