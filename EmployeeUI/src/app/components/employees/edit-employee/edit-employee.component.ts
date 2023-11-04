@@ -49,7 +49,6 @@ export class EditEmployeeComponent implements OnInit {
   
 
   public updateEmployee() {
-    console.log("UPDATE EMPLOYEE");
     
     this.employeeService.updateEmployee(this.employeeDetails.id, this.employeeDetails)
     .subscribe({
