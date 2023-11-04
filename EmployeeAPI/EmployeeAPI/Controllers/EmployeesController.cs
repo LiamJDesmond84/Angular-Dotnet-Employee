@@ -80,9 +80,10 @@ namespace EmployeeAPI.Controllers
                 employee.Phone = employeeUpdateRequest.Phone;
                 employee.Department = employeeUpdateRequest.Department;
 
+                await context.SaveChangesAsync();
+                return Ok(employee);
             }
 
-            return Ok(employee);
         }
 
     }
