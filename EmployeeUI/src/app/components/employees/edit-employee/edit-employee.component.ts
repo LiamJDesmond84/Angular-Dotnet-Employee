@@ -36,8 +36,13 @@ export class EditEmployeeComponent implements OnInit {
               }
             });
           }
+        },
+        error: (response) => {
+          console.log(response.error);
+          
         }
       }
+      
     )
   }
 
