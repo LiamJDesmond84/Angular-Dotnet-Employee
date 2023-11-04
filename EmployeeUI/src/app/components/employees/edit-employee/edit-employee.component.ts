@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 
@@ -7,7 +8,7 @@ import { EmployeesService } from 'src/app/services/employees.service';
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.css']
 })
-export class EditEmployeeComponent {
+export class EditEmployeeComponent implements OnInit {
 
   editEmployeeRequest: Employee = {
     id: "",
@@ -18,7 +19,12 @@ export class EditEmployeeComponent {
     department: ""
   }
 
-  constructor(private employeeService: EmployeesService) {}
+  constructor(private route: ActivatedRoute, private employeeService: EmployeesService) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  
 
   public editEmployee() {
 
