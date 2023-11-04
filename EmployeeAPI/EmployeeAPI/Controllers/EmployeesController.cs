@@ -101,6 +101,9 @@ namespace EmployeeAPI.Controllers
             }
             else
             {
+                context.Employees.Remove(employee);
+                await context.SaveChangesAsync();
+
                 return Ok(employee);
             }
         }
