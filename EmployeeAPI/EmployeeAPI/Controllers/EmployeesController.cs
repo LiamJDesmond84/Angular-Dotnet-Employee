@@ -93,7 +93,16 @@ namespace EmployeeAPI.Controllers
         [HttpDelete("{id:Guid}")]
         public async Task<IActionResult> deleteEmployee([FromRoute] Guid id)
         {
+            var employee = await context.Employees.FindAsync(id);
 
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(employee);
+            }
         }
 
     }
